@@ -156,7 +156,9 @@ app.get("/logout", (req, res, next) => {
     });
 });
 
-
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 //index route
 app.get("/listings", warpAsync(async (req, res) => {
 
@@ -301,8 +303,8 @@ app.use((err, req, res, next) => {
 });
 
 
+const PORT = process.env.PORT || 3000;
 
-
-app.listen("3000", (req, res) => {
+app.listen(PORT, (req, res) => {
     console.log("app is listening");
 })
