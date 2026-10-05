@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerPlate.ejs") %>
+<body>
+    <h1>Create New Listing</h1>
+    
+    <div class="row">
+        <br>
+        <div class="col-8 offset-2">
+            
+    <form method="post" action="/listings" novalidate class="needs-validation"  enctype="multipart/form-data" >
+        <div class="mb-3">
+        <input type="text" name="listing[title]" class="form-control" required placeholder="enter your property name">
+         <div class="valid-feedback">good title!</div>
+        </div>
+
+        <div class="mb-3" >
+        <label for="description" class="form-label">description</label>
+        <textarea name="listing[description]" class="form-control" required placeholder="add some description"></textarea>
+         <div class="invalid-feedback">description should be valid & short!</div>
+        </div>
+        <div class="mb-3" >
+        <label for="image" class="form-label" >Upload your image file</label>
+        <input type="file" required name="listing[image]" class="form-control">
+        </div>        
+
+         <div class="row">
+         <div class="mb-3 col-md-4">
+         <label for="price" class="form-label" >Price</label>
+        <input type="" name="listing[price]" class="form-control"required placeholder="enter your price">
+              <div class="invalid-feedback">price should be valid!</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+        <label for="location" class="form-label">Location</label> 
+        <input type="text" name="listing[location]" class="form-control" required placeholder="enter your location">
+         <div class="invalid-feedback">location should be valid!</div>
+        </div>
+        </div>
+
+        <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]"class="form-control" required placeholder="enter your country">
+         <div class="invalid-feedback">country should be valid!</div>
+        </div>
+         <br>
+        <button class="btn btn-dark add-btn">submit</button>
+
+    </form>
+    </div>
+    </div>
+    
+</body>
